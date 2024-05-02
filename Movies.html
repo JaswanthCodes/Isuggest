@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>iSuggest</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="banner">
+            <div class="navbar">
+                <ul>
+                    <li><a href="./ex.html">Home</a></li>
+                    <li><a href="./Books.html">Books</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="./Websites.html">Websites</a></li>
+                </ul>
+            </div>
+                <label for="genres">Genre</label>
+                <select name="genres" id="genres">
+                    <option value="comedy">Comedy</option>
+                    <option value="thriller">Thriller</option>
+                    <option value="action">Action</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit" onclick="submitGenre()"/>
+            <div class="comedy" id="comedy">
+                <h1>1)Free Guy</h1>
+                <img src="https://upload.wikimedia.org/wikipedia/en/1/1c/Free_Guy_2021_Poster.jpg" alt="image">
+                <p>Free Guy is a 2021 American science fiction action comedy film directed and produced by Shawn Levy from a screenplay by Matt Lieberman and Zak Penn, and a story by Lieberman. The film stars Ryan Reynolds, Jodie Comer, Lil Rel Howery, Utkarsh Ambudkar, Joe Keery, and Taika Waititi. It tells the story of a bank teller who discovers that he is a non-player character in a massively multiplayer online game who then partners with a player to find evidence that a gaming company's CEO stole the player's game's source code.</p>
+            </div>
+            <div class="thriller" id="thriller">
+                <h1>1)Source Code</h1>
+                <img src="https://upload.wikimedia.org/wikipedia/en/e/e5/Source_Code_Poster.jpg" alt="image">
+                <p>Source Code is a 2011 American science fiction action thriller film[4] directed by Duncan Jones and written by Ben Ripley on spec. It stars Jake Gyllenhaal as U.S. Army Captain Colter Stevens, who is sent into an eight-minute digital recreation of a real-life train explosion, tasked with determining the identity of the terrorist who bombed it. Michelle Monaghan, Vera Farmiga, and Jeffrey Wright play supporting roles.</p>
+            </div>
+            <div class="action" id="action">
+                <h1>1)The Gray Man</h1>
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/59/The_Gray_Man_poster.png" alt="image">
+                <p>The Gray Man is a 2022 American action thriller film directed by Anthony and Joe Russo, from a screenplay the latter co-wrote with Christopher Markus and Stephen McFeely, based on the 2009 novel of the same name by Mark Greaney. The film stars Ryan Gosling, Chris Evans, Ana de Armas, Jessica Henwick, Regé-Jean Page, Wagner Moura, Julia Butters, Dhanush, Alfre Woodard, and Billy Bob Thornton. Produced by the Russo brothers' company, AGBO, it is the first film in a franchise based upon Greaney's Gray Man novels. The plot centers on CIA agent "Sierra Six", who is on the run from sociopathic ex-CIA agent and mercenary Lloyd Hansen upon discovering corrupt secrets about his superior.</p>
+            </div>
+        </div>
+
+        <script>
+
+            document.addEventListener("DOMContentLoaded", () => {
+                document.getElementById("comedy").style.display = "none";
+                document.getElementById("thriller").style.display = "none";
+                document.getElementById("action").style.display = "none";
+            });
+
+            function submitGenre() {
+                let value = document.getElementById("genres").value;
+                console.log(value);
+                if(value === "comedy"){
+                    document.getElementById("comedy").style.display = "block";
+                    document.getElementById("thriller").style.display = "none";
+                    document.getElementById("action").style.display = "none";
+                }  else if(value === "thriller"){
+                    document.getElementById("comedy").style.display = "none";
+                    document.getElementById("thriller").style.display = "block";
+                    document.getElementById("action").style.display = "none";
+                }  else if(value === "action"){
+                    document.getElementById("comedy").style.display = "none";
+                    document.getElementById("thriller").style.display = "none";
+                    document.getElementById("action").style.display = "block";
+                }
+            }
+            </script>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>iSuggest</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="banner">
+            <div class="navbar">
+                <ul>
+                    <li><a href="./ex.html">Home</a></li>
+                    <li><a href="./Books.html">Books</a></li>
+                    <li><a href="./Movies.html">Movies</a></li>
+                    <li><a href="#">Websites</a></li>
+                </ul>
+            </div>
+                <label for="genres">Genre</label>
+                <select name="genres" id="genres">
+                    <option value="For_JEE_preparation">For_JEE_preparation</option>
+                    <option value="For_NEET_preparation">For_NEET_preparation</option>
+                    <option value="For_Learning_Programming_Languages">For_Learning_Programming_Languages</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit" onclick="submitGenre()"/>
+            <div class="For_JEE_preparation" id="For_JEE_preparation">
+                <h2>1)Career Launcher</h2>
+                <p><a href="https://www.careerlauncher.com/jee-neet/freeonlineclasses/">https://www.careerlauncher.com/jee-neet/freeonlineclasses/</a></p>
+                <br>
+                <h2>2)Vedantu</h2>
+                <p><a href="https://www.vedantu.com/iit-jee">https://www.vedantu.com/iit-jee</a></p>
+                <br>
+                <h2>3)Byju's</h2>
+                <p><a href="https://byjus.com/jee/">https://byjus.com/jee/</a></p>
+            </div>
+            <div class="For_NEET_preparation" id="For_NEET_preparation">
+                <h2>1)EMBIBE</h2>
+                <p><a href="https://www.embibe.com/exams/nta-neet/">https://www.embibe.com/exams/nta-neet/</a></p>
+                <br>
+                <h2>2)ETOOSindia</h2>
+                <p><a href="https://www.etoosindia.com/courses/neet/intro.do">https://www.etoosindia.com/courses/neet/intro.do</a></p>
+                <br>
+                <h2>3)Aakashitutor</h2>
+                <p><a href="https://www.aakashitutor.com/">https://www.aakashitutor.com/</a></p>
+            </div>
+            <div class="For_Learning_Programming_Languages" id="For_Learning_Programming_Languages">
+                <h2>1)w3schools</h2>
+                <p><a href="https://www.w3schools.com/">https://www.w3schools.com/</a></p>
+                <br>
+                <h2>2)javatpoint</h2>
+                <p><a href="https://www.javatpoint.com/">https://www.javatpoint.com/</a></p>
+            </div>
+        </div>
+
+        <script>
+
+            document.addEventListener("DOMContentLoaded", () => {
+                document.getElementById("For_JEE_preparation").style.display = "none";
+                document.getElementById("For_NEET_preparation").style.display = "none";
+                document.getElementById("For_Learning_Programming_Languages").style.display = "none";
+            });
+
+            function submitGenre() {
+                let value = document.getElementById("genres").value;
+                console.log(value);
+                if(value === "For_JEE_preparation"){
+                    document.getElementById("For_JEE_preparation").style.display = "block";
+                    document.getElementById("For_NEET_preparation").style.display = "none";
+                    document.getElementById("For_Learning_Programming_Languages").style.display = "none";
+                }  else if(value === "For_NEET_preparation"){
+                    document.getElementById("For_JEE_preparation").style.display = "none";
+                    document.getElementById("For_NEET_preparation").style.display = "block";
+                    document.getElementById("For_Learning_Programming_Languages").style.display = "none";
+                }  else if(value === "For_Learning_Programming_Languages"){
+                    document.getElementById("For_JEE_preparation").style.display = "none";
+                    document.getElementById("For_NEET_preparation").style.display = "none";
+                    document.getElementById("For_Learning_Programming_Languages").style.display = "block";
+                }
+            }
+            </script>
+    </body>
+</html>

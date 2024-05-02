@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>iSuggest</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="banner">
+            <div class="navbar">
+                <ul>
+                    <li><a href="./ex.html">Home</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="./Movies.html">Movies</a></li>
+                    <li><a href="./Websites.html">Websites</a></li>
+                </ul>
+            </div>
+                <label for="genres">Choose a Genre</label>
+                <select name="genres" id="genres">
+                    <option value="Novel">Novel</option>
+                    <option value="Narrative">Narrative</option>
+                    <option value="Mystery">Mystery</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit" onclick="submitGenre()"/>
+            <div class="Novel" id="Novel" style="display: flex;">
+                <h1>1) James Finch's:
+                    Silence in the Land of Gold</h1>
+                <div><img src="https://cloudfront.penguin.co.in/wp-content/uploads/sites/2/2022/06/9789814954945.jpg" alt="image"></div>
+                <p>George Wilford is a long-time foreign lawyer in Burma and has been hired by a new firm in town headed
+                   by Seth Drake.  When George is tasked by Seth to fix a mistake that threatens to bring down the firm, he
+                   is led to an intrigue over a fortune lost in an air crash involving the Burmese military and the Kachin
+                   Independence Army.  With the help of Molly Durberville, another lawyer in the firm, George must solve the
+                   mystery of the air crash in order to save his own life and Molly's.</p>
+            </div>
+            <div class="Narrative" id="Narrative">
+                <h1>1)Lord of the Flies:
+                    by William Golding</h1>
+                <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327869409l/7624.jpg" alt="image">
+                <p>At the dawn of the next world war, a plane crashes on an uncharted island, stranding a group of schoolboys. At first, 
+                    with no adult supervision, their freedom is something to celebrate; this far from civilization the boys can do anything 
+                    they want. Anything. They attempt to forge their own society, failing, however, in the face of terror, sin and evil. 
+                    And as order collapses, as strange howls echo in the night, as terror begins its reign, the hope of adventure seems as far from    reality as the hope of being rescued. Labeled a parable, an allegory, a myth, a morality tale, a parody, a political treatise,    even a vision of the apocalypse, Lord of the Flies is perhaps our most memorable novel about “the end of innocence, the darkness of man's heart.”</p>
+            </div>
+            <div class="Mystery" id="Mystery">
+                <h1>1)The Last Invitation:
+                    by Darby Kane</h1>
+                <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1651581920l/60587043.jpg" alt="image">
+                <p>Darby Kane, the author of the critically acclaimed and #1 International Bestseller Pretty Little Wife, has crafted another gripping and twisty suspense about an invitation to an exclusive club that comes with deadly consequences.
+                    They meet the second Tuesday of every month and vote…and then someone dies.
+                    Over the last few years, prominent people—a retired diplomat, beloved basketball coach, the CEO of an empire—have died in a series of fluke accidents and shocking suicides. There’s no apparent connection, no signs of foul play.</p>
+            </div>
+        </div>
+
+        <script>
+
+            document.addEventListener("DOMContentLoaded", () => {
+                document.getElementById("Novel").style.display = "none";
+                document.getElementById("Narrative").style.display = "none";
+                document.getElementById("Mystery").style.display = "none";
+            });
+
+            function submitGenre() {
+                let value = document.getElementById("genres").value;
+                console.log(value);
+                if(value === "Novel"){
+                    document.getElementById("Novel").style.display = "block";
+                    document.getElementById("Narrative").style.display = "none";
+                    document.getElementById("Mystery").style.display = "none";
+                }  else if(value === "Narrative"){
+                    document.getElementById("Novel").style.display = "none";
+                    document.getElementById("Narrative").style.display = "block";
+                    document.getElementById("Mystery").style.display = "none";
+                }  else if(value === "Mystery"){
+                    document.getElementById("Novel").style.display = "none";
+                    document.getElementById("Narrative").style.display = "none";
+                    document.getElementById("Mystery").style.display = "block";
+                }
+            }
+            </script>
+    </body>
+</html>
